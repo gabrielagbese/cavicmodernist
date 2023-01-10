@@ -1,6 +1,6 @@
 import React from 'react'
-import SpacesTop from './SpacesTop'
-import SpacesBottom from './SpacesBottom'
+import SpacesTop from './spaces-components/SpacesTop'
+import SpacesBottom from './spaces-components/SpacesBottom'
 
 export default function Spaces() {
   return (

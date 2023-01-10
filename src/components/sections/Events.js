@@ -1,6 +1,6 @@
 import React from 'react'
-import EventsTop from './EventsTop'
-import EventsBottom from './EventsBottom'
+import EventsTop from './events-components/EventsTop'
+import EventsBottom from './events-components/EventsBottom'
 
 export default function Events() {
   return (

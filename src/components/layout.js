@@ -49,8 +49,9 @@ const Layout = ({ children }) => {
 		//mobile scroll-trigger animation
 		mm.add(" (max-width: 720px)", () =>{
 			tl.to(".about", {yPercent: -100})
-			tl.to(".spaces", {yPercent: -200})
-			tl.to(".events", {yPercent: -300})
+			tl.to(".spaces", {yPercent: -150})
+			tl.to(".events", {yPercent: -250})
+			
 
 		})
 		//desktop scroll-trigger animation
@@ -61,8 +62,6 @@ const Layout = ({ children }) => {
 			tl.to(".events", {xPercent: -300})
 			tl.to(".events", {yPercent: -50})
 			tl.to(".contact", {xPercent: -400})
-			tl.to(".invisible", {xPercent: -420})
-			
 		})
 
 	});
