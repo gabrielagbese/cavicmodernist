@@ -11,12 +11,14 @@ body {
 
 .main-wrapper {
   background-color: red;
+  height: auto;
 }
 
 .stage-layer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: auto;
 }
 
 @media (min-width: 0px) {
@@ -39,28 +41,8 @@ body {
 
 .section {
   min-width: 99vw;
-  height: 100vh;
+  min-height: 100vh;
   border: thin solid red;
-}
-
-@media (min-width: 0px) {
-  .section-long {
-    min-width: 99vw;
-    height: 100%;
-    border: thin solid red;
-    overflow-x: hidden;
-    background-color: #7fff83;
-  }
-}
-
-@media (min-width: 960px) {
-  .section-long {
-    min-width: 120vw;
-    height: 100%;
-    border: thin solid pink;
-    overflow-x: hidden;
-    background-color: #eaff7f;
-  }
 }
 
 .hero {
@@ -71,7 +53,21 @@ body {
   background-color: purple;
 }
 
-.spaces-top {
+.spaces {
+  background-color: aqua;
+}
+
+.events {
+  background-color: orange;
+}
+
+.contact {
+  background-color: yellow;
+}
+
+.invisible {
+  width: 300px;
+  height: 300px;
   background-color: aqua;
 }
 /*# sourceMappingURL=layout.css.map */

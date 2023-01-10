@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function SpacesBottom() {
   return (
-    <div>SpacesBottom</div>
+    <div className='section spaces-bottom'>SpacesBottom</div>
   )
 }

@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function EventsTop() {
   return (
-    <div>EventsTop</div>
+    <div className='section events-top'>EventsTop</div>
   )
 }

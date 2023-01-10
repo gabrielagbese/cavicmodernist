@@ -14,11 +14,10 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import Header from "./header"
 import Hero from "./sections/Hero";
 import About from "./sections/About";
-import SpacesTop from "./sections/SpacesTop";
-import SpacesBottom from "./sections/SpacesBottom";
-import EventsTop from "./sections/EventsTop"
-import EventsBottom from "./sections/EventsBottom"
+import Spaces from "./sections/Spaces";
+import Events from "./sections/Events"
 import Contact from "./sections/Contact";
+import Invisible from "./sections/Invisible";
 import "./layout.css"
 
 gsap.registerPlugin(ScrollTrigger)
@@ -37,24 +36,33 @@ const Layout = ({ children }) => {
 	useEffect(() => {
 		let mm = gsap.matchMedia();
 
+		//scroll-trigger
 		let tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: ".stage-layer",
 				pin: true,
 				scrub: 0.1,
-				//snap: directionalSnap(1 / (sections.length - 1)),
-				end: "+=4000"
+				end: "+=15000"
 				}
 		});
 
+		//mobile scroll-trigger animation
 		mm.add(" (max-width: 720px)", () =>{
 			tl.to(".about", {yPercent: -100})
-			tl.to(".spaces-top", {yPercent: -200})
-		})
+			tl.to(".spaces", {yPercent: -200})
+			tl.to(".events", {yPercent: -300})
 
+		})
+		//desktop scroll-trigger animation
 		mm.add(" (min-width: 721px)", () =>{
 			tl.to(".about", {xPercent: -100})
-			tl.to(".spaces-top", {xPercent: -200})
+			tl.to(".spaces", {xPercent: -200})
+			tl.to(".spaces", {yPercent: -50})
+			tl.to(".events", {xPercent: -300})
+			tl.to(".events", {yPercent: -50})
+			tl.to(".contact", {xPercent: -400})
+			tl.to(".invisible", {xPercent: -420})
+			
 		})
 
 	});
@@ -64,27 +72,24 @@ const Layout = ({ children }) => {
 	return (
 		<div className="main-wrapper">
 			<div className="stage-layer">
-				<section className="section hero">
+				<section className="section-wrapper">
 					<Hero />
 				</section>
-				<section className="section about">
+				<section className="section-wrapper">
 					<About />
 				</section>
-				<section className="section spaces-top">
-					<SpacesTop />
+				<section className="section-wrapper">
+					<Spaces />
 				</section>
-				<section className="section spaces-bottom">
-					<SpacesBottom />
+				<section className="section-wrapper">
+					<Events />
 				</section>
-				<section className="section events-top">
-					<EventsTop />
-				</section>
-				<section className="section events-bottom">
-					<EventsBottom />
-				</section>
-				<section className="section contact">
+				<section className="section-wrapper">
 					<Contact />
 				</section>
+				{/* <section className="invisible">
+					<Invisible />
+				</section> */}
 			</div>
 		</div>
 	)
