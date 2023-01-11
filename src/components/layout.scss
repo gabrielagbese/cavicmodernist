@@ -33,24 +33,47 @@ body{
     }
 }
 
-.nav{
+.desk-nav{
     opacity: 0;
+    z-index: 999;
     background-color: red;
     @include xs{
-        width: 100%;
-        height: 10vh;
+        display: none;
     };
     @include lg{
+        display: block;
         width: 5vw;
         height: 100%;
     }
 }
 
+.mob-nav{
+    @include xs{
+        opacity: 0;
+        height: 11.5%;
+        width: 100%;
+        z-index: 5;
+        position: fixed;
+        background-color: red;
+    };
+    @include lg{
+        display: none;
+    };
+}
+
 .section{
-    min-width: 100vw;
-    min-height: 100vh;
+    
     border: thin solid red;
-    //background-color: aquamarine;
+    @include xs{
+        min-width: 100vw;
+        min-height: 90vh;
+        padding-top: 0vh;
+    };
+    @include lg{
+        min-width: 100vw;
+        min-height: 100vh;
+        padding-top: 0vh;
+    }
 }
 
 .section-long{

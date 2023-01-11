@@ -42,6 +42,7 @@ const Layout = ({ children }) => {
 			scrollTrigger: {
 				trigger: ".stage-layer",
 				pin: true,
+				snap: "labels",
 				scrub: 0.1,
 				end: "+=15000"
 			}
@@ -49,11 +50,11 @@ const Layout = ({ children }) => {
 
 		//mobile scroll-trigger animation
 		mm.add(" (max-width: 720px)", () => {
-
-			tl.to(".about", { yPercent: -100 })
-			tl.to(".spaces", { yPercent: -150 })
-			tl.to(".events", { yPercent: -250 })
-			tl.to(".contact", { yPercent: -600 })
+			tl.to(".about", { yPercent: -120 })
+			tl.to(".mob-nav", { opacity: 1, duration:0 })
+			tl.to(".spaces", { yPercent: -160 })
+			tl.to(".events", { yPercent: -260 })
+			tl.to(".contact", { yPercent: -620 })
 
 
 		})
@@ -61,7 +62,7 @@ const Layout = ({ children }) => {
 		mm.add(" (min-width: 721px)", () => {
 			tl.to(".hero", { xPercent: -50 })
 			tl.to(".about", { xPercent: -100 })
-			tl.to(".nav", { opacity: 1, duration:0.25 })
+			tl.to(".desk-nav", { opacity: 1, duration:0.25 })
 			tl.to(".spaces", { xPercent: -195 })
 			tl.to(".spaces", { yPercent: -50 })
 			tl.to(".events", { xPercent: -295 })
@@ -76,6 +77,7 @@ const Layout = ({ children }) => {
 
 	return (
 		<div className="main-wrapper">
+			<nav className="mob-nav"></nav>
 			<div className="stage-layer">
 				<section className="section-wrapper">
 					<Hero />
