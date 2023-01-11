@@ -38,10 +38,45 @@ body {
   }
 }
 
+.nav {
+  opacity: 0;
+  background-color: red;
+}
+
+@media (min-width: 0px) {
+  .nav {
+    width: 100%;
+    height: 10vh;
+  }
+}
+
+@media (min-width: 960px) {
+  .nav {
+    width: 5vw;
+    height: 100%;
+  }
+}
+
 .section {
   min-width: 100vw;
   min-height: 100vh;
   border: thin solid red;
+}
+
+@media (min-width: 0px) {
+  .section-long {
+    min-width: 100vw;
+    min-height: 120vh;
+    border: thin solid red;
+  }
+}
+
+@media (min-width: 960px) {
+  .section-long {
+    min-width: 100vw;
+    min-height: 100vh;
+    border: thin solid red;
+  }
 }
 
 .hero {
@@ -50,6 +85,28 @@ body {
 
 .about {
   background-color: purple;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+@media (min-width: 0px) {
+  .about {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (min-width: 960px) {
+  .about {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 
 .spaces {

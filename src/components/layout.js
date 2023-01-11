@@ -12,6 +12,7 @@ import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 import Header from "./header"
+import Nav from "./Nav";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Spaces from "./sections/Spaces";
@@ -43,27 +44,29 @@ const Layout = ({ children }) => {
 				pin: true,
 				scrub: 0.1,
 				end: "+=15000"
-				}
+			}
 		});
 
 		//mobile scroll-trigger animation
-		mm.add(" (max-width: 720px)", () =>{
-			tl.to(".about", {yPercent: -100})
-			tl.to(".spaces", {yPercent: -150})
-			tl.to(".events", {yPercent: -250})
-			tl.to(".contact", {yPercent: -600})
-			
+		mm.add(" (max-width: 720px)", () => {
+
+			tl.to(".about", { yPercent: -100 })
+			tl.to(".spaces", { yPercent: -150 })
+			tl.to(".events", { yPercent: -250 })
+			tl.to(".contact", { yPercent: -600 })
+
 
 		})
 		//desktop scroll-trigger animation
-		mm.add(" (min-width: 721px)", () =>{
-			tl.to(".about", {xPercent: -100})
-			tl.to(".spaces", {xPercent: -200})
-			tl.to(".spaces", {yPercent: -50})
-			tl.to(".events", {xPercent: -300})
-			tl.to(".events", {yPercent: -50})
-			tl.to(".contact", {xPercent: -400})
-			tl.to(".invisible", {yPercent: -250})
+		mm.add(" (min-width: 721px)", () => {
+			tl.to(".hero", { xPercent: -50 })
+			tl.to(".about", { xPercent: -100 })
+			tl.to(".nav", { opacity: 1, duration:0.25 })
+			tl.to(".spaces", { xPercent: -195 })
+			tl.to(".spaces", { yPercent: -50 })
+			tl.to(".events", { xPercent: -295 })
+			tl.to(".events", { yPercent: -50 })
+			tl.to(".contact", { xPercent: -395 })
 
 		})
 
