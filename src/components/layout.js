@@ -51,6 +51,7 @@ const Layout = ({ children }) => {
 			tl.to(".about", {yPercent: -100})
 			tl.to(".spaces", {yPercent: -150})
 			tl.to(".events", {yPercent: -250})
+			tl.to(".contact", {yPercent: -600})
 			
 
 		})
@@ -62,6 +63,8 @@ const Layout = ({ children }) => {
 			tl.to(".events", {xPercent: -300})
 			tl.to(".events", {yPercent: -50})
 			tl.to(".contact", {xPercent: -400})
+			tl.to(".invisible", {yPercent: -250})
+
 		})
 
 	});
@@ -86,9 +89,9 @@ const Layout = ({ children }) => {
 				<section className="section-wrapper">
 					<Contact />
 				</section>
-				{/* <section className="invisible">
+				<section className="invisible">
 					<Invisible />
-				</section> */}
+				</section>
 			</div>
 		</div>
 	)

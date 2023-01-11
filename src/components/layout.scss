@@ -7,16 +7,18 @@ html{
 body{
     padding: 0;
     margin: 0;
+    //max-height: 90vh;
+    //max-height: 75vh;
 }
 
 .main-wrapper{
-    background-color: red;
-    height: auto;
+    background-color: blue;
+    //max-height: 100vh;
 }
 
 .stage-layer{
     display: flex;
-    height: auto;
+    height: 100vh;
     @include xs{
         flex-direction: column;
     };
@@ -26,28 +28,11 @@ body{
 }
 
 .section{
-    min-width: 99vw;
+    min-width: 100vw;
     min-height: 100vh;
     border: thin solid red;
     //background-color: aquamarine;
 }
-
-// .section-long{
-//     @include xs{
-//         min-width: 99vw;
-//         height: 100%;
-//         border: thin solid red;
-//         overflow-x: hidden;
-//         background-color: rgb(127, 255, 131);
-//     };
-//     @include lg{
-//         min-width: 120vw;
-//         height: 100%;
-//         border: thin solid pink;
-//         overflow-x: hidden;
-//         background-color: rgb(234, 255, 127);
-//     };
-// }
 
 .hero{
     background-color: pink;

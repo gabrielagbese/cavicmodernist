@@ -10,15 +10,14 @@ body {
 }
 
 .main-wrapper {
-  background-color: red;
-  height: auto;
+  background-color: blue;
 }
 
 .stage-layer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: auto;
+  height: 100vh;
 }
 
 @media (min-width: 0px) {
@@ -40,7 +39,7 @@ body {
 }
 
 .section {
-  min-width: 99vw;
+  min-width: 100vw;
   min-height: 100vh;
   border: thin solid red;
 }
