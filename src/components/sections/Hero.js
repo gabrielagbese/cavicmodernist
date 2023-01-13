@@ -1,7 +1,21 @@
 import React from 'react'
+import { useEffect } from 'react'
+import Scroller from './hero-components/Scroller';
+import LocalScroller from './hero-components/LocalScroller';
+
 
 export default function Hero() {
+
+  useEffect(() => {
+
+    
+
+    //end of useEffect
+  },);
+
   return (
-    <div className='section-long hero'>hero</div>
+    <div className='section-long hero'>
+      <LocalScroller />
+    </div>
   )
 }

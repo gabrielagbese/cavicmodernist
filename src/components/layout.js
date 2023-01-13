@@ -44,30 +44,35 @@ const Layout = ({ children }) => {
 				pin: true,
 				snap: "labels",
 				scrub: 0.1,
-				end: "+=15000"
+				end: "+=20000"
 			}
 		});
 
 		//mobile scroll-trigger animation
 		mm.add(" (max-width: 720px)", () => {
-			tl.to(".about", { yPercent: -120 })
+			tl.to(".hero", { yPercent: -50 })
+			tl.to(".about", { yPercent: -115 })
 			tl.to(".mob-nav", { opacity: 1, duration:0 })
-			tl.to(".spaces", { yPercent: -160 })
-			tl.to(".events", { yPercent: -260 })
-			tl.to(".contact", { yPercent: -620 })
+			tl.to(".spaces", { yPercent: -65.775 })
+			tl.to(".invisible", { xPercent: 1, duration:0.2 })
+			tl.to(".spaces", { yPercent: -137.5 })
+			tl.to(".events", { yPercent: -271 })
+			tl.to(".invisible", { xPercent: 1, duration:0.2 })
+			tl.to(".events", { yPercent: -325 })
+			tl.to(".contact", { yPercent: -742 })
 
 
 		})
 		//desktop scroll-trigger animation
 		mm.add(" (min-width: 721px)", () => {
 			tl.to(".hero", { xPercent: -50 })
-			tl.to(".about", { xPercent: -100 })
+			tl.to(".about", { xPercent: -119 })
 			tl.to(".desk-nav", { opacity: 1, duration:0.25 })
-			tl.to(".spaces", { xPercent: -195 })
+			tl.to(".spaces", { xPercent: -213 })
 			tl.to(".spaces", { yPercent: -50 })
-			tl.to(".events", { xPercent: -295 })
+			tl.to(".events", { xPercent: -313 })
 			tl.to(".events", { yPercent: -50 })
-			tl.to(".contact", { xPercent: -395 })
+			tl.to(".contact", { xPercent: -413 })
 
 		})
 

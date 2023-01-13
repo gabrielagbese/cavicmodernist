@@ -6,6 +6,7 @@ export default function About() {
     
     <div className='section about'>
       <nav className='desk-nav'> <Nav /> </nav>
+      <p>about</p>
     </div>
   )
 }

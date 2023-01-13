@@ -39,9 +39,12 @@ body{
     background-color: red;
     @include xs{
         display: none;
+        height: 0;
+        width: 0;
     };
     @include lg{
         display: block;
+        padding-left: 1vw;
         width: 5vw;
         height: 100%;
     }
@@ -50,7 +53,7 @@ body{
 .mob-nav{
     @include xs{
         opacity: 0;
-        height: 11.5%;
+        height: 10%;
         width: 100%;
         z-index: 5;
         position: fixed;
@@ -66,7 +69,7 @@ body{
     border: thin solid red;
     @include xs{
         min-width: 100vw;
-        min-height: 90vh;
+        min-height: 100vh;
         padding-top: 0vh;
     };
     @include lg{
@@ -79,11 +82,11 @@ body{
 .section-long{
     @include xs{
         min-width: 100vw;
-        min-height: 120vh;
+        min-height: 125vh;
         border: thin solid red;
     }
     @include lg{
-        min-width: 100vw;
+        min-width: 118vw;
         min-height: 100vh;
         border: thin solid red;
     }
@@ -94,6 +97,7 @@ body{
 }
 .about{
     background-color: purple;
+    border: thin solid green;
     display: flex;
     height: 100%;
     @include xs{
@@ -106,6 +110,26 @@ body{
 
 .spaces{
     background-color: aqua;
+}
+
+.section-long-spaces-bottom{
+    @include xs{
+        width: 100vw;
+        height: 225vh;
+    };
+    @include lg{
+        width: 100vw;
+        height: 100vh;
+    };
+}
+
+.space-thumb-container{
+    @include xs{
+        width: 100%;
+        height: 25vh;
+        margin: 2.5vh 0;
+        border: thin solid black;
+    }
 }
 
 .events{
@@ -121,3 +145,68 @@ body{
     height: 300px;
     background-color: aqua;
 }
+
+//scrollers
+.card1{
+    @include xs{
+        display: flex;
+        flex-direction: column;
+        width: 50vw;
+        //padding-right: 0.5vw;
+    };
+    @include lg{
+        display: flex;
+        flex-direction: row-reverse;
+        width: 117.5vw;
+        padding-right: 0.5vw;
+    }
+}
+
+.box {
+    padding-left: 10px;
+  }
+  
+  .item {
+    padding-bottom: 10px;
+  }
+  
+  .item_child {
+    @include xs{
+        width: 30vw;
+        height: 10vh;
+        border-radius: 10px;
+        //display: flex;
+        // justify-content: center;
+        // align-items: center;
+        color: #fff;
+        font-size: 50px;
+        margin-left: 0.35vw;
+    };
+    @include lg{
+        width: 18.6vw;
+        height: 40vh;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 50px;
+        margin-left: 0.35vw;
+    };
+  }
+  
+  .box .item_child:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  
+  .box01 .item_child {
+    background-color:yellowgreen;
+  }
+  
+  .box02 .item_child {
+    background-color:yellowgreen;
+  }
+
+  .box03 .item_child {
+    background-color:yellowgreen;
+  }
