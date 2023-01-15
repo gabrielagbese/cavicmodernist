@@ -15,6 +15,10 @@ export default function Hero() {
 
   return (
     <div className='section-long hero'>
+      <div className='hidden-scroller'>
+        <LocalScroller />
+      </div>
+      <LocalScroller />
       <LocalScroller />
     </div>
   )

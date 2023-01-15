@@ -44,7 +44,7 @@ const Layout = ({ children }) => {
 				pin: true,
 				snap: "labels",
 				scrub: 0.1,
-				end: "+=20000"
+				end: "+=20000",
 			}
 		});
 
