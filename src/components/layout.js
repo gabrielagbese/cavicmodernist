@@ -44,7 +44,7 @@ const Layout = ({ children }) => {
 				pin: true,
 				snap: "labels",
 				scrub: 0.1,
-				end: "+=20000",
+				end: "+=17500",
 			}
 		});
 
@@ -52,14 +52,14 @@ const Layout = ({ children }) => {
 		mm.add(" (max-width: 720px)", () => {
 			tl.to(".hero", { yPercent: -50 })
 			tl.to(".about", { yPercent: -115 })
-			tl.to(".mob-nav", { opacity: 1, duration:0 })
-			tl.to(".spaces", { yPercent: -65.775 })
+			tl.fromTo(".mob-nav", { yPercent: -100 , opacity: 0, duration:0 },{yPercent: 0 , opacity: 1,})
+			tl.to(".spaces", { yPercent: -67 })
 			tl.to(".invisible", { xPercent: 1, duration:0.2 })
-			tl.to(".spaces", { yPercent: -137.5 })
+			tl.to(".spaces", { yPercent: -100.5 })
 			tl.to(".events", { yPercent: -271 })
 			tl.to(".invisible", { xPercent: 1, duration:0.2 })
 			tl.to(".events", { yPercent: -325 })
-			tl.to(".contact", { yPercent: -742 })
+			tl.to(".contact", { yPercent: -740 })
 
 
 		})
@@ -67,7 +67,7 @@ const Layout = ({ children }) => {
 		mm.add(" (min-width: 721px)", () => {
 			tl.to(".hero", { xPercent: -50 })
 			tl.to(".about", { xPercent: -119 })
-			tl.to(".desk-nav", { opacity: 1, duration:0.25 })
+			tl.fromTo(".desk-nav", { xPercent: -100 , opacity: 0, duration:0.25 },{xPercent: 0 , opacity: 1,})
 			tl.to(".spaces", { xPercent: -213 })
 			tl.to(".spaces", { yPercent: -50 })
 			tl.to(".events", { xPercent: -313 })
@@ -83,28 +83,32 @@ const Layout = ({ children }) => {
 	return (
 		<div className="main-wrapper">
 			<nav className="mob-nav"></nav>
-			<div className="stage-layer">
-				<section className="section-wrapper">
-					<Hero />
-				</section>
-				<section className="section-wrapper">
-					<About />
-				</section>
-				<section className="section-wrapper">
-					<Spaces />
-				</section>
-				<section className="section-wrapper">
-					<Events />
-				</section>
-				<section className="section-wrapper">
-					<Contact />
-				</section>
-				<section className="invisible">
-					<Invisible />
-				</section>
+			<div className="stage-outer-layer">
+				<div className="stage-layer">
+					<section className="section-wrapper">
+						<Hero />
+					</section>
+					<section className="section-wrapper">
+						<About />
+					</section>
+					<section className="section-wrapper">
+						<Spaces />
+					</section>
+					<section className="section-wrapper">
+						<Events />
+					</section>
+					<section className="section-wrapper">
+						<Contact />
+					</section>
+					<section className="invisible">
+						<Invisible />
+					</section>
+				</div>
 			</div>
 		</div>
 	)
 }
+
+
 
 export default Layout

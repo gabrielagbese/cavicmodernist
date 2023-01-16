@@ -16,10 +16,10 @@ export default function Hero() {
   return (
     <div className='section-long hero'>
       <div className='hidden-scroller'>
-        <LocalScroller />
+        <LocalScroller direction={"-33.3%"} uniqueId="first"/>
       </div>
-      <LocalScroller />
-      <LocalScroller />
+      <LocalScroller direction={"33.3%"} uniqueId="second"/>
+      <LocalScroller direction={"-33.3%"} uniqueId="third"/>
     </div>
   )
 }

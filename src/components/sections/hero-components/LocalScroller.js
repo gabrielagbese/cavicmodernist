@@ -15,22 +15,23 @@ export default function LocalScroller(props) {
 		let scrollTl1 = gsap.timeline();
 		let scrollTl2 = gsap.timeline();
 		var rate = 20;
+		let direction = props.direction;
+		console.log(direction)
 
 		let master = gsap.timeline();
-		scrollmm.add(" (max-width: 720px)", () =>{
-			master.to(".scroll-inner-container-slow", 20, {repeat: -1,x: '-' + "50%",ease: Linear.easeNone,});
+		scrollmm.add(" (max-width: 720px)", () => {
+			master.to("#" + props.uniqueId, 17.5, { repeat: -1, x: direction, ease: Linear.easeNone, });
 		})
-		scrollmm.add(" (min-width: 721px)", () =>{
-			master.to(".scroll-inner-container-slow", 20, {repeat: -1,y: '-' + "50%",ease: Linear.easeNone,});
+		scrollmm.add(" (min-width: 721px)", () => {
+			master.to("#" + props.uniqueId, 17.5, { repeat: -1, y: direction, ease: Linear.easeNone, });
 		})
-		
+
 
 		var tween = gsap.to(master, { duration: 1.5, timeScale: 1, paused: true });
-		var timeScaleClamp = gsap.utils.clamp(1, 6);
 
 		ScrollTrigger.create({
 			start: 0,
-			end: "+=1000",
+			end: "+=5000",
 			onUpdate: self => {
 				master.timeScale(9)
 				tween.invalidate().restart();
@@ -43,9 +44,10 @@ export default function LocalScroller(props) {
 	},);
 	return (
 		<div className='scroller-container'>
-			<div className='scroll-inner-container-slow' style={{ backgroundColor: "orange" }}>
-				<div className='scroller scroller1 '>1</div>
-				<div className='scroller scroller2 '>2</div>
+			<div className='scroll-inner-container-slow' id={props.uniqueId} style={{ backgroundColor: "orange" }}>
+				<div className='scroller scroller1 '><p>{props.direction} 1</p></div>
+				<div className='scroller scroller2 '><p>{props.direction} 2</p></div>
+				<div className='scroller scroller0 '><p>{props.direction} 0</p></div>
 			</div>
 			{/* <div className='scroll-inner-container-fast' style={{backgroundColor: "orange"}}>
         <div className='scroller scroller1 '>1</div>

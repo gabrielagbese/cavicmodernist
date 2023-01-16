@@ -22,6 +22,11 @@ body{
     // }
 }
 
+.stage-outer-layer{
+    overflow: hidden;
+    height: 100%;
+}
+
 .stage-layer{
     display: flex;
     height: 100vh;
@@ -120,6 +125,56 @@ body{
     background-color: aqua;
 }
 
+.spaces-top-container{
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+
+    @include xs{
+        height: 90vh;
+        flex-direction: column-reverse;
+        margin-right: 0;
+        margin-bottom: 10vh;
+    }
+    @include lg{
+        height: 100vh;
+        flex-direction: row-reverse;
+        padding-right: 6.75vw;
+        margin-bottom: 0;
+    }
+}
+
+.spaces-bottom{
+    overflow: hidden;
+    //border: thick solid green;
+    @include xs{
+        height: 50vh;
+    };
+    @include lg{
+        height: 100vh;
+    };
+}
+
+.spaces-bottom-main{
+    width: 100vw;
+    @include xs{
+        margin-top: 10vh;
+        height: 90%;
+    };
+    @include lg{
+        margin-top: 0vh;
+        height: 100%;
+    };
+}
+
+.spaces-bottom-sub{
+    display: none;
+    width: 100%;
+    height: 80%;
+    background-color: gray;
+    z-index: 998;
+}
+
 .section-long-spaces-bottom{
     @include xs{
         width: 100vw;
@@ -142,6 +197,56 @@ body{
 
 .events{
     background-color: orange;
+}
+
+.events-top-container{
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+
+    @include xs{
+        height: 90vh;
+        flex-direction: column-reverse;
+        margin-right: 0;
+        margin-bottom: 0vh;
+    }
+    @include lg{
+        height: 100vh;
+        flex-direction: row-reverse;
+        padding-right: 6.75vw;
+        margin-bottom: 0;
+    }
+}
+
+.events-bottom{
+    overflow: hidden;
+    //border: thick solid green;
+    @include xs{
+        height: 50vh;
+    };
+    @include lg{
+        height: 100vh;
+    };
+}
+
+.events-bottom-main{
+    width: 100vw;
+    @include xs{
+        margin-top: 10vh;
+        height: 90%;
+    };
+    @include lg{
+        margin-top: 0vh;
+        height: 100%;
+    };
+}
+
+.events-bottom-sub{
+    display: none;
+    width: 100%;
+    height: 50%;
+    background-color: gray;
+    z-index: 998;
 }
 
 .contact{
@@ -185,6 +290,7 @@ body{
     //border: thin solid greenyellow;
     box-sizing: border-box;
     overflow: hidden;
+    color: white;
 
     @include xs{
         height: 100%;
@@ -204,17 +310,20 @@ body{
     };
     @include lg{
         flex-direction: column;
+        
     };
 }
 
-@keyframes scroll-move{
-    0%{
-        top: 0;
-    }
-    100% {
-		top: -100%;
-	}
+.scroller0{
+    @include xs{
+        transform: translatex(-300%);
+    };
+    @include lg{
+        transform: translatey(-300%);
+    };
 }
+
+
 
 .hidden-scroller{
     @include xs{
