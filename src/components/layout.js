@@ -8,6 +8,7 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { useEffect } from "react";
+import { useState } from "react";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -23,6 +24,7 @@ import "./layout.css"
 
 gsap.registerPlugin(ScrollTrigger)
 
+
 const Layout = ({ children }) => {
 	const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -33,6 +35,8 @@ const Layout = ({ children }) => {
       }
     }
   `)
+
+  	const [menuActivated, setMenuActivated] = useState(false);
 
 	useEffect(() => {
 		let mm = gsap.matchMedia();
@@ -52,12 +56,12 @@ const Layout = ({ children }) => {
 		mm.add(" (max-width: 720px)", () => {
 			tl.to(".hero", { yPercent: -50 })
 			tl.to(".about", { yPercent: -115 })
-			tl.fromTo(".mob-nav", { yPercent: -100 , opacity: 0, duration:0 },{yPercent: 0 , opacity: 1,})
+			tl.fromTo(".mob-nav-wrapper", { yPercent: -100, opacity: 0, duration: 0 }, { yPercent: 0, opacity: 1, })
 			tl.to(".spaces", { yPercent: -67 })
-			tl.to(".invisible", { xPercent: 1, duration:0.2 })
+			tl.to(".invisible", { xPercent: 1, duration: 0.2 })
 			tl.to(".spaces", { yPercent: -100.5 })
 			tl.to(".events", { yPercent: -271 })
-			tl.to(".invisible", { xPercent: 1, duration:0.2 })
+			tl.to(".invisible", { xPercent: 1, duration: 0.2 })
 			tl.to(".events", { yPercent: -325 })
 			tl.to(".contact", { yPercent: -740 })
 
@@ -67,7 +71,7 @@ const Layout = ({ children }) => {
 		mm.add(" (min-width: 721px)", () => {
 			tl.to(".hero", { xPercent: -50 })
 			tl.to(".about", { xPercent: -119 })
-			tl.fromTo(".desk-nav", { xPercent: -100 , opacity: 0, duration:0.25 },{xPercent: 0 , opacity: 1,})
+			tl.fromTo(".mob-nav-wrapper", { xPercent: -100, opacity: 0, duration: 0 }, { xPercent: 0, opacity: 1, })
 			tl.to(".spaces", { xPercent: -213 })
 			tl.to(".spaces", { yPercent: -50 })
 			tl.to(".events", { xPercent: -313 })
@@ -82,14 +86,22 @@ const Layout = ({ children }) => {
 
 	return (
 		<div className="main-wrapper">
-			<nav className="mob-nav"></nav>
+			<div className="mob-nav-wrapper">
+				<nav className="mob-nav">
+					<button onClick={activateMenu}>menu</button>
+				</nav>
+				<div className="mob-nav-content">
+				<button onClick={deactivateMenu}>close</button>
+				</div>
+			</div>
 			<div className="stage-outer-layer">
+				<div className="menu"><button onClick={activateMenu}>menu</button></div>
 				<div className="stage-layer">
 					<section className="section-wrapper">
 						<Hero />
 					</section>
 					<section className="section-wrapper">
-						<About />
+						<About fn={activateMenu}/>
 					</section>
 					<section className="section-wrapper">
 						<Spaces />
@@ -107,6 +119,36 @@ const Layout = ({ children }) => {
 			</div>
 		</div>
 	)
+
+
+	
+	
+	function activateMenu() {
+		let menuTween = gsap.timeline();
+		let menuMedia = gsap.matchMedia();
+		//"
+
+		menuMedia.add(" (max-width: 720px)", () => {
+			menuTween.to(".mob-nav-content", {marginTop:0, duration: 1})
+		})
+		menuMedia.add(" (min-width: 721px)", () => {
+			menuTween.to(".mob-nav-content", {marginLeft:0, duration: 1})
+		})
+		
+		//setMenuActivated(true)
+	}
+	function deactivateMenu() {
+		let menuTween = gsap.timeline()
+		let menuMedia = gsap.matchMedia();
+		//"
+
+		menuMedia.add(" (max-width: 720px)", () => {
+			menuTween.to(".mob-nav-content", {marginTop:"-120vh", duration: 1})
+		})
+		menuMedia.add(" (min-width: 721px)", () => {
+			menuTween.to(".mob-nav-content", {marginLeft:"-120vw", duration: 1})
+		})
+}
 }
 
 

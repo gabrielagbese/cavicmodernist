@@ -23,11 +23,19 @@ body{
 }
 
 .stage-outer-layer{
+    
     overflow: hidden;
     height: 100%;
+    // @include xs{
+        
+    // }
+    // @include lg{
+    //     display: flex;
+    // }
 }
 
 .stage-layer{
+    //position: absolute;
     display: flex;
     height: 100vh;
     @include xs{
@@ -55,18 +63,85 @@ body{
     }
 }
 
-.mob-nav{
+.mob-nav-wrapper{
+    
     @include xs{
-        opacity: 0;
-        height: 10%;
-        width: 100%;
+        opacity: 1;
+        height: auto;
+        width: auto;
         z-index: 5;
         position: fixed;
-        background-color: red;
+        //background-color: red;
     };
     @include lg{
-        display: none;
+        display: flex;
+        height: auto;
+        width: auto;
+        margin-bottom: -10%;
     };
+}
+.mob-nav{
+    @include xs{
+        opacity: 1;
+        height: 10vh;
+        width: 100vw;
+        z-index: 5;
+        background-color: green;
+    };
+    @include lg{
+        height: 100vh;
+        width: 5vw;
+        margin-bottom: -10%;
+    };
+}
+
+.mob-nav-content{
+    //display: none;
+    //opacity: 0;
+    @include xs{
+        height: 90vh;
+        width: 100vw;
+        z-index: 4;
+        margin-top: -120vh;
+        background-color: maroon;
+    };
+    @include lg{
+        height: 100vh;
+        width: 100vw;
+        margin-top: 0vh;
+        margin-bottom: -10%;
+        margin-left: -120vw;
+    };
+}
+
+.nav-container{
+    @include xs{
+
+    }
+    @include lg{
+        display: flex;
+    }
+}
+
+.menu{
+    position: fixed;
+    //display: none;
+    opacity: 0.1;
+    margin-bottom: -100vh;
+    // z-index: 9999;
+    //position: absolute;
+    background-color: olive;
+    border: thin solid white;
+    @include xs{
+        min-width: 100vw;
+        min-height: 90vh;
+    };
+    @include lg{
+        margin-left: 1.85vw;
+        min-width: 95vw;
+        min-height: 100vh;
+    };
+
 }
 
 .section{

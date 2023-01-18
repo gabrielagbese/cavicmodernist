@@ -67,19 +67,92 @@ body {
 }
 
 @media (min-width: 0px) {
-  .mob-nav {
-    opacity: 0;
-    height: 10%;
-    width: 100%;
+  .mob-nav-wrapper {
+    opacity: 1;
+    height: auto;
+    width: auto;
     z-index: 5;
     position: fixed;
-    background-color: red;
+  }
+}
+
+@media (min-width: 960px) {
+  .mob-nav-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: auto;
+    width: auto;
+    margin-bottom: -10%;
+  }
+}
+
+@media (min-width: 0px) {
+  .mob-nav {
+    opacity: 1;
+    height: 10vh;
+    width: 100vw;
+    z-index: 5;
+    background-color: green;
   }
 }
 
 @media (min-width: 960px) {
   .mob-nav {
-    display: none;
+    height: 100vh;
+    width: 5vw;
+    margin-bottom: -10%;
+  }
+}
+
+@media (min-width: 0px) {
+  .mob-nav-content {
+    height: 90vh;
+    width: 100vw;
+    z-index: 4;
+    margin-top: -120vh;
+    background-color: maroon;
+  }
+}
+
+@media (min-width: 960px) {
+  .mob-nav-content {
+    height: 100vh;
+    width: 100vw;
+    margin-top: 0vh;
+    margin-bottom: -10%;
+    margin-left: -120vw;
+  }
+}
+
+@media (min-width: 960px) {
+  .nav-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.menu {
+  position: fixed;
+  opacity: 0.1;
+  margin-bottom: -100vh;
+  background-color: olive;
+  border: thin solid white;
+}
+
+@media (min-width: 0px) {
+  .menu {
+    min-width: 100vw;
+    min-height: 90vh;
+  }
+}
+
+@media (min-width: 960px) {
+  .menu {
+    margin-left: 1.85vw;
+    min-width: 95vw;
+    min-height: 100vh;
   }
 }
 
