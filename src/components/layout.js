@@ -56,12 +56,12 @@ const Layout = ({ children }) => {
 		mm.add(" (max-width: 720px)", () => {
 			tl.to(".hero", { yPercent: -50 })
 			tl.to(".about", { yPercent: -115 })
-			tl.fromTo(".mob-nav-wrapper", { yPercent: -100, opacity: 0, duration: 0 }, { yPercent: 0, opacity: 1, })
-			tl.to(".spaces", { yPercent: -67 })
-			tl.to(".invisible", { xPercent: 1, duration: 0.2 })
+			tl.to(".mob-nav-wrapper",{ yPercent: 0, opacity: 1, duration: 0.01})
+			tl.to(".spaces", { yPercent: -67.5 })
+			tl.to(".invisible", { xPercent: 1, duration: 0.01 })
 			tl.to(".spaces", { yPercent: -100.5 })
 			tl.to(".events", { yPercent: -271 })
-			tl.to(".invisible", { xPercent: 1, duration: 0.2 })
+			tl.to(".invisible", { xPercent: 1, duration: 0.01 })
 			tl.to(".events", { yPercent: -325 })
 			tl.to(".contact", { yPercent: -740 })
 
