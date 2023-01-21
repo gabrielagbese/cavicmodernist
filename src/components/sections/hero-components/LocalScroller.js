@@ -3,6 +3,7 @@ import gsap, { Power0 } from 'gsap'
 import { useEffect } from 'react';
 import { Linear } from 'gsap/all';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import IMAGES from '../../../images/Images';
 
 
 export default function LocalScroller(props) {
@@ -20,10 +21,10 @@ export default function LocalScroller(props) {
 
 		let master = gsap.timeline();
 		scrollmm.add(" (max-width: 720px)", () => {
-			master.to("#" + props.uniqueId, 17.5, { repeat: -1, x: direction, ease: Linear.easeNone, });
+			master.to("#" + props.uniqueId, 60, { repeat: -1, x: direction, ease: Linear.easeNone, });
 		})
 		scrollmm.add(" (min-width: 721px)", () => {
-			master.to("#" + props.uniqueId, 17.5, { repeat: -1, y: direction, ease: Linear.easeNone, });
+			master.to("#" + props.uniqueId, 60, { repeat: -1, y: direction, ease: Linear.easeNone, });
 		})
 
 
@@ -33,7 +34,7 @@ export default function LocalScroller(props) {
 			start: 0,
 			end: "+=5000",
 			onUpdate: self => {
-				master.timeScale(7)
+				master.timeScale(5)
 				tween.invalidate().restart();
 			}
 		})
@@ -45,9 +46,93 @@ export default function LocalScroller(props) {
 	return (
 		<div className='scroller-container'>
 			<div className='scroll-inner-container-slow' id={props.uniqueId} style={{ backgroundColor: "black" }}>
-				<div className='scroller scroller1 '><p>{props.direction} 1</p></div>
-				<div className='scroller scroller2 '><p>{props.direction} 2</p></div>
-				<div className='scroller scroller0 '><p>{props.direction} 0</p></div>
+				<div className='scroller scroller1 '>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/1.jpg'/>
+					</div>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/2.jpg'/>
+					</div>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/3.jpg'/>
+					</div>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/4.jpg'/>
+					</div>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/5.jpg'/>
+					</div>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/6.jpg'/>
+					</div>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/7.jpg'/>
+					</div>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/8.jpg'/>
+					</div>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/9.jpg'/>
+					</div>
+				</div>
+				<div className='scroller scroller2 '>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/1.jpg'/>
+					</div>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/2.jpg'/>
+					</div>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/3.jpg'/>
+					</div>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/4.jpg'/>
+					</div>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/5.jpg'/>
+					</div>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/6.jpg'/>
+					</div>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/7.jpg'/>
+					</div>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/8.jpg'/>
+					</div>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/9.jpg'/>
+					</div>
+				</div>
+				<div className='scroller scroller0 '>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/1.jpg'/>
+					</div>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/2.jpg'/>
+					</div>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/3.jpg'/>
+					</div>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/4.jpg'/>
+					</div>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/5.jpg'/>
+					</div>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/6.jpg'/>
+					</div>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/7.jpg'/>
+					</div>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/8.jpg'/>
+					</div>
+					<div className='scroll-image-container'>
+						<img className='scroll-fit' src='../images/reels/events/9.jpg'/>
+					</div>
+				</div>
 			</div>
 			{/* <div className='scroll-inner-container-fast' style={{backgroundColor: "orange"}}>
         <div className='scroller scroller1 '>1</div>

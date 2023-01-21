@@ -267,7 +267,7 @@ body {
 
 .hero-top-nav {
   width: 90%;
-  padding: 0% 5%;
+  padding: 2.5% 5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -541,12 +541,10 @@ body {
 
 @media (min-width: 0px) {
   .scroller-container {
-    border: thin solid yellow;
     width: 100%;
-    height: 25vh;
-    background-color: turquoise;
+    height: 29vh;
     margin-top: 0.5vh;
-    margin-bottom: 0vh;
+    margin-bottom: 0.5vh;
     margin-left: 0;
   }
 }
@@ -559,7 +557,6 @@ body {
             flex-direction: column;
     width: 19vw;
     height: 100vh;
-    border: thin solid yellow;
     margin-top: 0;
     margin-bottom: 0vh;
     margin-left: .5vw;
@@ -567,8 +564,7 @@ body {
 }
 
 .scroller {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(purple), color-stop(yellow), to(purple));
-  background-image: linear-gradient(to top, purple, yellow, purple);
+  background: black;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow: hidden;
@@ -577,6 +573,13 @@ body {
 
 @media (min-width: 0px) {
   .scroller {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     height: 100%;
     min-width: 100vw;
   }
@@ -584,7 +587,12 @@ body {
 
 @media (min-width: 960px) {
   .scroller {
-    min-height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 0.35vh;
+    min-height: 200vh;
     min-width: 100%;
   }
 }
@@ -624,6 +632,27 @@ body {
   .scroller0 {
     -webkit-transform: translatey(-300%);
             transform: translatey(-300%);
+  }
+}
+
+.scroll-fit {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+@media (min-width: 0px) {
+  .scroll-fit {
+    width: 62.5vw;
+    margin-left: 1.5vw;
+    margin-top: 0.25vh;
+  }
+}
+
+@media (min-width: 960px) {
+  .scroll-fit {
+    width: 95%;
+    margin-left: 2.5%;
+    margin-top: 0.25vh;
   }
 }
 

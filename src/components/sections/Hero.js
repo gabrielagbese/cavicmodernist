@@ -19,10 +19,10 @@ export default function Hero() {
   return (
     <div className='section-long hero'>
       <div className='hidden-scroller'>
-        <LocalScroller direction={"-33.3%"} uniqueId="first" />
+        <LocalScroller direction={"-33.3%"} uniqueId="first" className="scrolltray"/>
       </div>
-      <LocalScroller direction={"33.3%"} uniqueId="second" />
-      <LocalScroller direction={"-33.3%"} uniqueId="third" />
+      <LocalScroller direction={"33.3%"} uniqueId="second" className="scrolltray"/>
+      <LocalScroller direction={"-33.3%"} uniqueId="third" className="scrolltray"/>
       <div className='hero-main'>
 
         <div className='hero-top'>
