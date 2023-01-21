@@ -5,14 +5,17 @@ import LocalScroller from './hero-components/LocalScroller';
 
 
 export default function Hero() {
+  
 
-  const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  
+  useEffect(() => {
+    const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [theme, setTheme] = useState(defaultDark);
   const switchTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
   };
-  useEffect(() => {
+  
     document.body.setAttribute("data-theme", theme);
   }, [theme]);
 
