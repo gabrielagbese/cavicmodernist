@@ -35,6 +35,7 @@ const Layout = ({ children }) => {
       }
     }
   `)
+  
 
   	const [menuActivated, setMenuActivated] = useState(false);
 
@@ -58,10 +59,10 @@ const Layout = ({ children }) => {
 			tl.to(".about", { yPercent: -115 })
 			tl.to(".mob-nav-wrapper",{ yPercent: 0, opacity: 1, duration: 0.01})
 			tl.to(".spaces", { yPercent: -67.5 })
-			tl.to(".invisible", { xPercent: 1, duration: 0.01 })
-			tl.to(".spaces", { yPercent: -100.5 })
+			tl.to(".invisible", { xPercent: 1, duration: 0.1 })
+			tl.to(".spaces", { yPercent: -137.5 })
 			tl.to(".events", { yPercent: -271 })
-			tl.to(".invisible", { xPercent: 1, duration: 0.01 })
+			tl.to(".invisible", { xPercent: 1, duration: 0.1 })
 			tl.to(".events", { yPercent: -325 })
 			tl.to(".contact", { yPercent: -740 })
 
@@ -71,7 +72,8 @@ const Layout = ({ children }) => {
 		mm.add(" (min-width: 721px)", () => {
 			tl.to(".hero", { xPercent: -50 })
 			tl.to(".about", { xPercent: -119 })
-			tl.fromTo(".mob-nav-wrapper", { xPercent: -100, opacity: 0, duration: 0 }, { xPercent: 0, opacity: 1, })
+			tl.to(".mob-nav", { width: "5vw", duration: 0})
+			tl.fromTo(".mob-nav-wrapper", { xPercent: -100, opacity: 0, duration: 0 }, { xPercent: 0, opacity: 1,duration: 0.1 })
 			tl.to(".spaces", { xPercent: -213 })
 			tl.to(".spaces", { yPercent: -50 })
 			tl.to(".events", { xPercent: -313 })

@@ -1,3 +1,23 @@
+@import url("https://api.fontshare.com/v2/css?f[]=switzer@1&display=swap");
+:root {
+  --background: #10100E;
+  --text:#F1F1E7;
+}
+
+[data-theme="light"] {
+  --background: #F1F1E7;
+  --text:#10100E;
+}
+
+[data-theme="dark"] {
+  --background: #10100E;
+  --text:#F1F1E7;
+}
+
+p {
+  font-family: 'Switzer', sans-serif;
+}
+
 html {
   padding: 0;
   margin: 0;
@@ -23,6 +43,9 @@ body {
   display: -ms-flexbox;
   display: flex;
   height: 100vh;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 @media (min-width: 0px) {
@@ -100,7 +123,7 @@ body {
 @media (min-width: 960px) {
   .mob-nav {
     height: 100vh;
-    width: 5vw;
+    width: 1vw;
     margin-bottom: -10%;
   }
 }
@@ -156,10 +179,6 @@ body {
   }
 }
 
-.section {
-  border: thin solid red;
-}
-
 @media (min-width: 0px) {
   .section {
     min-width: 100vw;
@@ -180,7 +199,6 @@ body {
   .section-long {
     min-width: 100vw;
     min-height: 125vh;
-    border: thin solid red;
   }
 }
 
@@ -188,12 +206,12 @@ body {
   .section-long {
     min-width: 118vw;
     min-height: 100vh;
-    border: thin solid red;
   }
 }
 
 .hero {
-  background-color: pink;
+  background-color: var(--background);
+  color: var(--text);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -214,6 +232,85 @@ body {
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
+  }
+}
+
+@media (min-width: 0px) {
+  .hero-main {
+    width: 100vw;
+    height: 70vh;
+  }
+}
+
+@media (min-width: 960px) {
+  .hero-main {
+    width: 59vw;
+    height: 100vh;
+  }
+}
+
+.hero-top {
+  width: 100%;
+}
+
+@media (min-width: 0px) {
+  .hero-top {
+    height: 60%;
+  }
+}
+
+@media (min-width: 960px) {
+  .hero-top {
+    height: 55%;
+  }
+}
+
+.hero-top-nav {
+  width: 90%;
+  padding: 0% 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.hero-bottom {
+  width: 95%;
+  margin-left: 1.5%;
+}
+
+@media (min-width: 0px) {
+  .hero-bottom {
+    height: 40%;
+    border-top: thin solid var(--text);
+    border-bottom: thin solid var(--text);
+  }
+}
+
+@media (min-width: 960px) {
+  .hero-bottom {
+    height: 45%;
+    border-top: thin solid var(--text);
+  }
+}
+
+@media (min-width: 0px) {
+  .hero-lg-text {
+    font-size: 3.125rem;
+    font-weight: 600;
+    margin-top: 0.1em;
+    line-height: 1em;
+  }
+}
+
+@media (min-width: 960px) {
+  .hero-lg-text {
+    font-size: 6rem;
+    font-weight: 600;
+    margin-top: 0.1em;
+    line-height: 1em;
   }
 }
 
@@ -383,11 +480,12 @@ body {
 
 .events-bottom {
   overflow: hidden;
+  background-color: aquamarine;
 }
 
 @media (min-width: 0px) {
   .events-bottom {
-    height: 50vh;
+    height: 10vh;
   }
 }
 
@@ -398,13 +496,14 @@ body {
 }
 
 .events-bottom-main {
+  background-color: teal;
   width: 100vw;
 }
 
 @media (min-width: 0px) {
   .events-bottom-main {
     margin-top: 10vh;
-    height: 90%;
+    height: 30%;
   }
 }
 
@@ -468,8 +567,8 @@ body {
 }
 
 .scroller {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(black), color-stop(yellow), to(black));
-  background-image: linear-gradient(to top, black, yellow, black);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(purple), color-stop(yellow), to(purple));
+  background-image: linear-gradient(to top, purple, yellow, purple);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow: hidden;

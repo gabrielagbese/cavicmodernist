@@ -33,7 +33,7 @@ export default function LocalScroller(props) {
 			start: 0,
 			end: "+=5000",
 			onUpdate: self => {
-				master.timeScale(9)
+				master.timeScale(7)
 				tween.invalidate().restart();
 			}
 		})
@@ -44,7 +44,7 @@ export default function LocalScroller(props) {
 	},);
 	return (
 		<div className='scroller-container'>
-			<div className='scroll-inner-container-slow' id={props.uniqueId} style={{ backgroundColor: "orange" }}>
+			<div className='scroll-inner-container-slow' id={props.uniqueId} style={{ backgroundColor: "black" }}>
 				<div className='scroller scroller1 '><p>{props.direction} 1</p></div>
 				<div className='scroller scroller2 '><p>{props.direction} 2</p></div>
 				<div className='scroller scroller0 '><p>{props.direction} 0</p></div>
