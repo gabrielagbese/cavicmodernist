@@ -17,7 +17,7 @@ export default function LocalScroller(props) {
 		let scrollTl2 = gsap.timeline();
 		var rate = 20;
 		let direction = props.direction;
-		console.log(direction)
+		console.log(direction) 
 
 		let master = gsap.timeline();
 		scrollmm.add(" (max-width: 720px)", () => {
