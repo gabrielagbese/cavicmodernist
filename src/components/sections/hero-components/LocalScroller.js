@@ -7,7 +7,7 @@ import IMAGES from '../../../images/Images';
 
 
 export default function LocalScroller(props) {
-
+ 
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger)
 		let scroller = document.querySelectorAll(".scroller")
